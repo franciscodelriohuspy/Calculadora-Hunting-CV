@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Hipotecaria Bayteca</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="calculator-container">
+        <div class="calculator-header">
+            <img src="logo.png" alt="Bayteca Logo" class="logo-img">
+            <h1>Calcula tu hipoteca</h1>
+        </div>
+
+        <div class="calculator-body">
+            <!-- Purchase Price -->
+            <div class="input-group">
+                <label for="purchase-price">Precio de compra</label>
+                <div class="input-wrapper">
+                    <span class="currency">€</span>
+                    <input type="number" id="purchase-price" value="500000" step="1000">
+                </div>
+            </div>
+
+            <!-- Mortgage Amount (Calculated/Display) -->
+            <div class="input-group">
+                <label>Importe de hipoteca</label>
+                <div class="value-display" id="mortgage-amount-display">€ 410,000</div>
+            </div>
+
+            <!-- Deposit -->
+            <div class="input-group">
+                <div class="label-row">
+                    <label for="deposit">Entrada / Aportación</label>
+                    <span id="deposit-value">€ 150,000</span>
+                </div>
+                <input type="range" id="deposit-slider" min="0" max="500000" value="150000" step="1000">
+            </div>
+
+            <!-- Fees and Taxes -->
+            <div class="input-group">
+                <div class="label-row">
+                    <label for="taxes-slider">Impuestos y gastos</label>
+                    <span id="taxes-value">€ 60,000</span>
+                </div>
+                <!-- Min/Max will be set by JS dynamically -->
+                <input type="range" id="taxes-slider" min="30000" max="60000" value="60000" step="100">
+            </div>
+
+            <!-- Repayment Term -->
+            <div class="input-group">
+                <div class="label-row">
+                    <label for="term">Plazo de amortización</label>
+                    <span id="term-value">25 años</span>
+                </div>
+                <input type="range" id="term-slider" min="10" max="40" value="25" step="1">
+            </div>
+
+            <!-- Interest Rate -->
+            <div class="input-group">
+                <div class="label-row">
+                    <label for="interest">Tipo de interés</label>
+                    <span id="interest-value">2.0 %</span>
+                </div>
+                <input type="range" id="interest-slider" min="0.1" max="10" value="2.0" step="0.1">
+            </div>
+
+            <!-- Result -->
+            <div class="result-box">
+                <div class="result-label">Tu cuota mensual</div>
+                <div class="result-value" id="monthly-payment">€ 1,840</div>
+                <div class="result-sub">al mes</div>
+            </div>
+
+            <button class="cta-button">Obtén tu presupuesto gratis ahora</button>
+
+            <p class="disclaimer">
+                * En España deberías calcular alrededor del 7-12% del precio de la propiedad para cubrir impuestos y
+                gastos relacionados tanto con la propiedad como con la hipoteca.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
